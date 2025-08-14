@@ -3,7 +3,7 @@ import TabsController from "./components/tabs";
 function App() {
 
   return (
-    <main className="container bg-amber-300">
+    <main className="flex flex-col">
       <TabsController />
     </main>
   );
