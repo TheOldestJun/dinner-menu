@@ -4,10 +4,11 @@ import MealsAutocomplete from './mealsAutocomplete';
 export default function MenuTab() {
     return (
         <div className='grid w-full grid-cols-3 gap-4'>
-            <Card>
+            <Card className='h-[500px] w-[300px]'>
                 <CardHeader>Понеділок</CardHeader>
                 <CardBody>
-                    <MealsAutocomplete label="Перші страви" />
+                    <MealsAutocomplete placeholder="Перші страви" className='mb-2' dbMeals='meals_soup' />
+                    <MealsAutocomplete placeholder="Другі страви" className='mb-2' dbMeals='meals_garnish' />
                 </CardBody>
             </Card>
             <Card>
