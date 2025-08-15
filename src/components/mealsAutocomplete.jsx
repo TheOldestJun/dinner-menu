@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CyrillicToTranslit from 'cyrillic-to-translit-js';
 import CreatableSelect from 'react-select/creatable';
 
 const options = [
@@ -7,15 +8,15 @@ const options = [
     { value: 'v', label: 'Вечеря' },
 ]
 
-export default function MealsAutocomplete({
-    placeholder = 'Введіть назву страви',
-    className,
-    dbMeals
-}) {
+export default function MealsAutocomplete({ placeholder, className, dbMeals }) {
+
+    const cyrillicToTranslit = new CyrillicToTranslit({ preset: "uk" });
     const [inputValue, setInputValue] = useState('');
 
     const onCreateOption = (value) => {
-        const node = { value, label: value.toUpperCase() };
+        const translitValue = cyrillicToTranslit.transform(value, "-")
+        const node = { value: translitValue, label: value.toUpperCase() };
+        console.log(node);
         options.push(node);
         setInputValue(node);
     }

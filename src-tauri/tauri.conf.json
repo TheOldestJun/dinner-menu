@@ -12,7 +12,9 @@
   "app": {
     "windows": [
       {
-        "title": "dinner-menu",
+        "title": "Менеджер меню",
+        "maximized": true,
+        "resizable": true,
         "width": 800,
         "height": 600
       }
