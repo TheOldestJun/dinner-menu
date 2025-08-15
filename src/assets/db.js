@@ -1,5 +1,4 @@
-
-/* import Dexie from 'dexie';
+import Dexie from 'dexie';
 
 export const db = new Dexie('dinnerDB');
 db.version(1).stores({
@@ -12,4 +11,4 @@ db.version(1).stores({
   menu: 'id, monday, tuesday, wednesday, thursday, friday, dateFirst, dateLast',
 });
 
-export default db; */
+export default db;

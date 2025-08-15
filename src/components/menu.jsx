@@ -1,5 +1,6 @@
-import { Card, CardBody, CardHeader, DatePicker, Checkbox } from '@heroui/react';
+import { Card, CardBody, CardHeader, DatePicker, Checkbox, Button } from '@heroui/react';
 import MealsAutocomplete from './mealsAutocomplete';
+import MenuCard from './menuCard';
 
 export default function MenuTab() {
     return (
@@ -7,33 +8,18 @@ export default function MenuTab() {
             <div className='col-span-6 text-center'>Оберіть дати для меню</div>
             <DatePicker className='col-span-3' isRequired label='Дата початку' />
             <DatePicker className='col-span-3' isRequired label='Дата закінчення' />
-            <Card className='h-[500px] w-[300px] col-span-2'>
-                <CardHeader className='grid grid-cols-2'>
-                    <div className='col-span-1'>Понеділок</div>
-                    <div className='col-span-1 justify-end'><Checkbox /></div>
+            <div className='col-span-6 flex justify-center'>
+                Робочі дні потрібно вказати відмітивши відповідну галочку:
+                <div className='mx-3'><Checkbox defaultSelected isDisabled />Робочий день</div>
+                <div><Checkbox isDisabled />Не робочий день</div>
+            </div>
 
-                </CardHeader>
-                <CardBody>
-                    <MealsAutocomplete placeholder="Перші страви" className='mb-2' dbMeals='meals_soup' />
-                    <MealsAutocomplete placeholder="Другі страви" className='mb-2' dbMeals='meals_garnish' />
-                </CardBody>
-            </Card>
-            <Card className='h-[500px] w-[300px] col-span-2'>
-                <CardHeader>Вівторок</CardHeader>
-                <CardBody>Card Body</CardBody>
-            </Card>
-            <Card className='h-[500px] w-[300px] col-span-2'>
-                <CardHeader>Середа</CardHeader>
-                <CardBody>Card Body</CardBody>
-            </Card>
-            <Card className='h-[500px] w-[300px] col-span-2'>
-                <CardHeader>Четвер</CardHeader>
-                <CardBody>Card Body</CardBody>
-            </Card>
-            <Card className='h-[500px] w-[300px] col-span-2'>
-                <CardHeader>П'ятниця</CardHeader>
-                <CardBody>Card Body</CardBody>
-            </Card>
+            <MenuCard weekDay='Понеділок' />
+            <MenuCard weekDay='Вівторок' />
+            <MenuCard weekDay='Середа' />
+            <MenuCard weekDay='Четвер' />
+            <MenuCard weekDay="П'ятниця" />
+            <Button color="primary" className='w-full col-span-2 h-[350px]'><div className='text-2xl'>Зберегти меню</div></Button>
         </div>
     )
 }
