@@ -1,5 +1,4 @@
-import { Card, CardBody, CardHeader, DatePicker, Checkbox, Button } from '@heroui/react';
-import MealsAutocomplete from './mealsAutocomplete';
+import { DatePicker, Checkbox, Button } from '@heroui/react';
 import MenuCard from './menuCard';
 
 export default function MenuTab() {

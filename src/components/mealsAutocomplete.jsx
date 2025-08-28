@@ -7,12 +7,6 @@ import CreatableSelect from 'react-select/creatable';
 import { addToast } from '@heroui/react';
 import db from '../assets/db';
 
-const options = [
-    { value: 'z', label: 'Завтрак' },
-    { value: 'o', label: 'Обід' },
-    { value: 'v', label: 'Вечеря' },
-]
-
 export default function MealsAutocomplete({ placeholder, className, dbMeals }) {
 
     const cyrillicToTranslit = new CyrillicToTranslit({ preset: "uk" });
